@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
+              tools:context=".view.activity.login.ForgetPsdActivity">
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_forget_psd_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edittext_login"
+            android:hint="请输入账号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="90dp"
+            android:singleLine="true"
+            android:textColorHint="#DDDDDD"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/et_forget_psd_user"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="账号"
+            android:textColor="#353535"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_forget_old_psd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edittext_login"
+            android:hint="请输入旧密码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="90dp"
+            android:singleLine="true"
+            android:textColorHint="#DDDDDD"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/et_forget_old_psd"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="旧密码"
+            android:textColor="#353535"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_forget_new_psd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edittext_login"
+            android:hint="请输入新密码密码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="90dp"
+            android:singleLine="true"
+            android:textColorHint="#DDDDDD"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/et_forget_new_psd"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="新密码"
+            android:textColor="#353535"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_forget_new_psd_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edittext_login"
+            android:hint="请再次输入新密码密码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="90dp"
+            android:singleLine="true"
+            android:textColorHint="#DDDDDD"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/et_forget_new_psd_confirm"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="新密码"
+            android:textColor="#353535"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_forget_psd"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_enable_green"
+        android:enabled="true"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp"
+        android:text="修改密码"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+</LinearLayout>
+
+

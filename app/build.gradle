@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'com.dodola.rocoofix'
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.yangzheandroid.rxmvp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'caibei'
+            keyPassword '123456'
+            storeFile file('D:/caibei.jks')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+rocoo_fix {
+    includePackage = ['com/yangzheandroid/rxmvp']
+    excludeClass = ['APP.class', 'HotFixManger.class']//任何在补丁加载前的类（比如Application及其子类）都不能插入Hack.class
+    enable = true
+//    preVersionPath = '1'
+//    scanref = true
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.dodola:rocoo:1.1'
+    compile project(':base')
+}

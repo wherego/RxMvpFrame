@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    //引导器的条目
+    <color name="background_tab_pressed">#ffffff</color>
+    <color name="background_tab_pressed_night">#383a40</color>
+
+    <color name="red">#FF0000</color>
+    <!--<color name="black">#000000</color>-->
+
+    <color name="tab_text_normal">#666666</color>
+    <color name="tag_text_normal">#bcbcbc</color>
+
+    <color name="refresh_text_color_gray">#999999</color>
+</resources>
