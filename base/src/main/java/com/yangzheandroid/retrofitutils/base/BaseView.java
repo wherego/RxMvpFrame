@@ -1,5 +1,9 @@
 package com.yangzheandroid.retrofitutils.base;
 
-public interface BaseView<T> {
+public interface BaseView {
+
+    void showLoading();
+
+    void hideLoading();
 
 }

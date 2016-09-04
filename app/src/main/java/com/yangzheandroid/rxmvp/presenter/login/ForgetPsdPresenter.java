@@ -104,5 +104,10 @@ public class ForgetPsdPresenter implements ForgetPsdContract.Presenter {
 
     }
 
+    @Override
+    public void release() {
+
+    }
+
 
 }

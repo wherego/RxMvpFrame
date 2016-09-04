@@ -124,4 +124,9 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     public void start() {
 
     }
+
+    @Override
+    public void release() {
+
+    }
 }

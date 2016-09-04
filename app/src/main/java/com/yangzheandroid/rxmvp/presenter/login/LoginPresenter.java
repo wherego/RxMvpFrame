@@ -34,6 +34,11 @@ public class LoginPresenter implements LoginContract.Presenter {
     }
 
     @Override
+    public void release() {
+
+    }
+
+    @Override
     public void isLoginSuccess() {
         Subscription subscribe = mLoginIml.loginRequest(mView.getUserName(), mView.getUserPsd())
                 .compose(RxSchedulersHelper.<BaseCallModel<UserBean>>io_main())

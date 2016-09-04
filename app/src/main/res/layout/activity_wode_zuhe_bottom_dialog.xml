@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/wode_zuhe_bottom_dialog_root"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/d220"
+              android:layout_gravity="center"
+              android:background="@drawable/bg_shape_round_white"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_dialog_zuhe_zhiding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="置顶"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:textColor="@color/bg_gray_90"/>
+
+    <TextView
+        android:id="@+id/txt_dialog_zuhe_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+</LinearLayout>

@@ -16,4 +16,18 @@
     <color name="tag_text_normal">#bcbcbc</color>
 
     <color name="refresh_text_color_gray">#999999</color>
+
+
+    <!--字体颜色-->
+    <color name="bg_gray_20">#333333</color>
+    <color name="bg_gray_40">#666666</color>
+    <color name="bg_gray_60">#999999</color>
+    <color name="bg_gray_70">#B3B3B3</color>
+    <color name="bg_gray_80">#CCCCCC</color>
+    <color name="bg_gray_90">#E6E6E6</color>
+    <color name="bg_gray_95">#F2F2F2</color>
+
+
+    <color name="white">#FFFFFF</color>
+
 </resources>

@@ -1,11 +1,13 @@
 package com.yangzheandroid.rxmvp.view.activity;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.yangzheandroid.retrofitutils.base.BaseActivity;
-import com.yangzheandroid.retrofitutils.image.ImageLoader;
 import com.yangzheandroid.rxmvp.R;
+import com.yangzheandroid.rxmvp.view.activity.customview.MoneyScaleActivity;
+import com.yangzheandroid.rxmvp.view.activity.dialog.DialogListActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,10 +16,11 @@ import butterknife.Unbinder;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.iv_main)
-    ImageView mIvMain;
-    @BindView(R.id.bt_load)
-    Button mBtLoad;
+
+    @BindView(R.id.bt_base_dialog)
+    Button mBtBaseDialog;
+    @BindView(R.id.bt_custom_view)
+    Button mBtCustomView;
     private Unbinder mUnbinder;
 
     @Override
@@ -43,12 +46,15 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.bt_load)
-    public void onClick() {
-
-        ImageLoader imageLoader = new ImageLoader();
-//        imageLoader.setImageCache(new MemoryCache(this));
-        imageLoader.dispayImage("http://img5.imgtn.bdimg.com/it/u=2917608665,2198585488&fm=11&gp=0.jpg", mIvMain);
-
+    @OnClick({R.id.bt_base_dialog, R.id.bt_custom_view})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_base_dialog:
+                startActivity(new Intent(MainActivity.this, DialogListActivity.class));
+                break;
+            case R.id.bt_custom_view:
+                startActivity(new Intent(MainActivity.this, MoneyScaleActivity.class));
+                break;
+        }
     }
 }
