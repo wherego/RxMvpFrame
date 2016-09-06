@@ -15,6 +15,7 @@
         yangzhe:titleTextSize1="30sp"
         />
 
+
     <!--刻度尺-->
     <LinearLayout
         android:layout_width="match_parent"
