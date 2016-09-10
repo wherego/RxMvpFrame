@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".view.activity.dialog.DialogListActivity">
         </activity>
+        <activity android:name=".view.activity.customview.CustomViewListActivity">
+        </activity>
     </application>
 
 </manifest>

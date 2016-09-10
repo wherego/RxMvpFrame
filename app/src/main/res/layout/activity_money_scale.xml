@@ -3,13 +3,69 @@
                 xmlns:yangzhe="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#3C3F41"
     >
+
+
+    <com.yangzheandroid.rxmvp.widget.custom.PanelView
+        android:id="@+id/panelview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="当前速度"
+        android:textSize="18sp"
+        yangzhe:arcColor="#EF1C63"
+        />
+
+    <SeekBar
+        android:id="@+id/seek_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/d30"
+        android:visibility="visible"/>
+
+
+    <!--自定义View起航-->
+    <com.yangzheandroid.rxmvp.widget.custom.WaveView
+        android:id="@+id/wave1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#CCCCCC"
+        android:color="#CCA4E3"
+        android:visibility="gone"
+        yangzhe:mode="circle"
+        yangzhe:waveCount="10"
+        yangzhe:waveHeight="200"
+        yangzhe:waveWidth="300"
+        />
+    <!--自定义View起航-->
+    <com.yangzheandroid.rxmvp.widget.custom.WaveView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wave1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:background="#CCCCCC"
+        android:color="#CCA4E3"
+        android:visibility="gone"
+        yangzhe:mode="triangle"
+        yangzhe:waveCount="10"
+        yangzhe:waveHeight="200"
+        yangzhe:waveWidth="300"
+        />
+
+
     <!--自定义View起航-->
     <com.yangzheandroid.rxmvp.widget.custom.MyView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="10dp"
+        android:visibility="gone"
         yangzhe:titleText1="3370"
         yangzhe:titleTextColor1="#ff0000"
         yangzhe:titleTextSize1="30sp"
