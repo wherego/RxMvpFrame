@@ -1,10 +1,12 @@
 package com.yangzheandroid.rxmvp.view.activity.dialog;
 
-import android.support.v7.widget.RecyclerView;
+import android.os.Bundle;
 
 import com.yangzheandroid.retrofitutils.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
 import com.yangzheandroid.rxmvp.presenter.dialog.DialogListPresenter;
+import com.yangzheandroid.rxmvp.widget.refreshload.PullRecyclerView;
+import com.yangzheandroid.rxmvp.widget.refreshload.PullRefreshLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,7 +17,9 @@ public class DialogListActivity extends BaseActivity implements DialogListConstr
 
 
     @BindView(R.id.dialog_list)
-    RecyclerView mDialogList;
+    PullRecyclerView mDialogList;
+    @BindView(R.id.prl_layout)
+    PullRefreshLayout mPrlLayout;
     private DialogListPresenter mPresenter;
     private Unbinder mUnbinder;
     private SweetAlertDialog mSweetAlertDialog;
@@ -56,9 +60,19 @@ public class DialogListActivity extends BaseActivity implements DialogListConstr
     }
 
     @Override
-    public RecyclerView getRecycleView() {
+    public PullRecyclerView getRecycleView() {
         return mDialogList;
     }
 
+    @Override
+    public PullRefreshLayout getPullToRefresh() {
+        return mPrlLayout;
+    }
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
+    }
 }

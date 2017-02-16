@@ -55,6 +55,7 @@ public class MainActivity extends BaseActivity {
             case R.id.bt_custom_view:
                 startActivity(new Intent(MainActivity.this, MoneyScaleActivity.class));
                 break;
+
         }
     }
 }

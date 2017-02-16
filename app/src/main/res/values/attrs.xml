@@ -116,4 +116,19 @@
     </declare-styleable>
 
 
+
+
+    <declare-styleable name="ProgressLoading">
+        <attr name="pl_indeterminate" format="boolean" />
+        <attr name="pl_barColor" format="color" />
+        <attr name="pl_rimColor" format="color" />
+        <attr name="pl_rimWidth" format="dimension" />
+        <attr name="pl_spinSpeed" format="float" />
+        <attr name="pl_barSpinCycleTime" format="integer" />
+        <attr name="pl_circleRadius" format="dimension" />
+        <attr name="pl_fillRadius" format="boolean" />
+        <attr name="pl_barWidth" format="dimension" />
+        <attr name="pl_linearProgress" format="boolean" />
+    </declare-styleable>
+
 </resources>

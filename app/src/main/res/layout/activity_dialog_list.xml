@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yangzheandroid.rxmvp.view.activity.dialog.DialogListActivity">
-
-    <android.support.v7.widget.RecyclerView
+<com.yangzheandroid.rxmvp.widget.refreshload.PullRefreshLayout
+    android:id="@+id/prl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yangzheandroid.rxmvp.widget.refreshload.PullRecyclerView
         android:id="@+id/dialog_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+</com.yangzheandroid.rxmvp.widget.refreshload.PullRefreshLayout>
+
 </RelativeLayout>

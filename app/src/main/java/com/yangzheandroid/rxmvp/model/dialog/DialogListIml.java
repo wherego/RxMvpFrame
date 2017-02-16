@@ -19,11 +19,10 @@ public class DialogListIml implements DialogListConstract.Model {
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 SystemClock.sleep(500);
-
                 result.add("中间弹出对话框");
                 result.add("底部弹出对话框");
+                result.add("自定义加载弹出对话框");
                 lister.onSuccess(result);
                 return;
             }
