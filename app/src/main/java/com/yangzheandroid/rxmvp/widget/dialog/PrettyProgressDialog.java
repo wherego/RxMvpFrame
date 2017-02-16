@@ -17,7 +17,7 @@ import com.yangzheandroid.rxmvp.widget.custom.ProgressLoading;
 public class PrettyProgressDialog extends Dialog {
     private Context mContext;
     private TextView mShowText;
-    private String mDefaultText = "拼命加载";
+    private String mDefaultText = "默认拼命加载中..";
     private ProgressLoading mProgressLoading;
 
     public PrettyProgressDialog(Context context) {
@@ -39,11 +39,11 @@ public class PrettyProgressDialog extends Dialog {
         mShowText.setText(mDefaultText);
     }
 
-    public void changeText(String text) {
-        mShowText.setText(text);
+    public void setText(String text) {
+       mDefaultText=text;
     }
 
-    public void changeText(int text) {
-        mShowText.setText(text);
+    public void setText(int text) {
+       mDefaultText=mContext.getResources().getString(text);
     }
 }

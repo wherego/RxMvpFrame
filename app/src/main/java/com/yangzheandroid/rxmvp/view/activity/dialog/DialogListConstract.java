@@ -1,8 +1,7 @@
 package com.yangzheandroid.rxmvp.view.activity.dialog;
 
-import com.yangzheandroid.retrofitutils.base.BasePresenter;
-import com.yangzheandroid.retrofitutils.base.BaseView;
-import com.yangzheandroid.rxmvp.model.OnRequestListenter;
+import com.yangzheandroid.rxmvp.base.BasePresenter;
+import com.yangzheandroid.rxmvp.base.BaseView;
 import com.yangzheandroid.rxmvp.widget.refreshload.PullRecyclerView;
 import com.yangzheandroid.rxmvp.widget.refreshload.PullRefreshLayout;
 
@@ -19,10 +18,5 @@ public class DialogListConstract {
 
     public interface Presenter extends BasePresenter {
 
-    }
-
-    public interface Model {
-        //Test
-        void getData(OnRequestListenter lister);
     }
 }

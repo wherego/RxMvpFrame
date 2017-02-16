@@ -4,16 +4,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.presenter.login.ForgetPsdPresenter;
 import com.yangzheandroid.rxmvp.utils.ToastUtils;
+import com.yangzheandroid.rxmvp.widget.dialog.PrettyProgressDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class ForgetPsdActivity extends BaseActivity implements ForgetPsdContract.View {
 
@@ -29,7 +29,7 @@ public class ForgetPsdActivity extends BaseActivity implements ForgetPsdContract
     @BindView(R.id.btn_forget_psd)
     Button mBtnForgetPsd;
     private Unbinder mUnbinder;
-    private SweetAlertDialog mSweetAlertDialog;
+    private PrettyProgressDialog mPrettyProgressDialog;
     private ForgetPsdPresenter mPresenter;
 
     @Override
@@ -69,7 +69,7 @@ public class ForgetPsdActivity extends BaseActivity implements ForgetPsdContract
 
     @Override
     public void showLoading() {
-        mSweetAlertDialog = showLoadingDialog();
+        mPrettyProgressDialog = showLoadingDialog();
     }
 
     @Override

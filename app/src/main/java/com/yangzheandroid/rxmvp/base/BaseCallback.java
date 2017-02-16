@@ -1,4 +1,4 @@
-package com.yangzheandroid.retrofitutils.base;
+package com.yangzheandroid.rxmvp.base;
 
 /**
  * Author：kalu on 2016/7/20 11:34

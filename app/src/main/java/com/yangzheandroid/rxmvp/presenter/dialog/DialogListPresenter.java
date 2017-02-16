@@ -29,10 +29,9 @@ import java.util.List;
  */
 public class DialogListPresenter implements DialogListConstract.Presenter, PullRefreshLayout.OnRefreshLoadListener {
 
-
     private static final String TAG = DialogListPresenter.class.getSimpleName();
     public DialogListActivity mView;
-    public DialogListConstract.Model mModel;
+    public DialogListIml mModel;
     private final Handler mHandler;
     private ArrayList<String> mResult;
 

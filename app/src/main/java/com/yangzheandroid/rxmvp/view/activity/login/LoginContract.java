@@ -1,7 +1,7 @@
 package com.yangzheandroid.rxmvp.view.activity.login;
 
-import com.yangzheandroid.retrofitutils.base.BasePresenter;
-import com.yangzheandroid.retrofitutils.base.BaseView;
+import com.yangzheandroid.rxmvp.base.BasePresenter;
+import com.yangzheandroid.rxmvp.base.BaseView;
 import com.yangzheandroid.rxmvp.beans.BaseCallModel;
 import com.yangzheandroid.rxmvp.beans.UserBean;
 

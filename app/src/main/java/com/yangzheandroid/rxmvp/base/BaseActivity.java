@@ -1,14 +1,14 @@
-package com.yangzheandroid.retrofitutils.base;
+package com.yangzheandroid.rxmvp.base;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
 import com.yangzheandroid.retrofitutils.utils.AppManager;
+import com.yangzheandroid.rxmvp.R;
+import com.yangzheandroid.rxmvp.widget.dialog.PrettyProgressDialog;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * Author：Jalen on 2016/7/17 10:16
@@ -16,9 +16,8 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    public SweetAlertDialog mLoadingDialog;
 
-
+public  PrettyProgressDialog mPrettyProgressDialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,23 +62,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 展示加载框
      */
-    public SweetAlertDialog showLoadingDialog() {
-        mLoadingDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        mLoadingDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        mLoadingDialog.setTitleText("正在加载中...");
-        mLoadingDialog.setCancelable(true);
-        mLoadingDialog.show();
-
-        return mLoadingDialog;
+    public PrettyProgressDialog showLoadingDialog() {
+        mPrettyProgressDialog = new PrettyProgressDialog(this);
+//        mPrettyProgressDialog.setText("正在加载中...");
+        mPrettyProgressDialog.setText(R.string.dialong_loading_tips);
+        mPrettyProgressDialog.show();
+        return mPrettyProgressDialog;
     }
 
     /**
      * 停止对话框
      */
     public void stopLoadingDialog() {
-        if (null != mLoadingDialog && mLoadingDialog.isShowing()) {
-            mLoadingDialog.dismiss();
-            mLoadingDialog = null;
+        if (null != mPrettyProgressDialog && mPrettyProgressDialog.isShowing()) {
+            mPrettyProgressDialog.dismiss();
+            mPrettyProgressDialog = null;
         }
     }
 }

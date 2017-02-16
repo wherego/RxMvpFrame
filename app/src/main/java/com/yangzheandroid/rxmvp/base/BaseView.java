@@ -1,4 +1,4 @@
-package com.yangzheandroid.retrofitutils.base;
+package com.yangzheandroid.rxmvp.base;
 
 public interface BaseView {
 

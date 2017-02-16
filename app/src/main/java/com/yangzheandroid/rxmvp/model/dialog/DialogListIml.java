@@ -3,7 +3,6 @@ package com.yangzheandroid.rxmvp.model.dialog;
 import android.os.SystemClock;
 
 import com.yangzheandroid.rxmvp.model.OnRequestListenter;
-import com.yangzheandroid.rxmvp.view.activity.dialog.DialogListConstract;
 
 import java.util.ArrayList;
 
@@ -11,9 +10,8 @@ import java.util.ArrayList;
  * Author：Jalen on 2016/9/2 22:02
  * Contact: studylifetime@sina.com
  */
-public class DialogListIml implements DialogListConstract.Model {
+public class DialogListIml  {
 
-    @Override
     public void getData(final OnRequestListenter lister) {
         final ArrayList<String> result = new ArrayList<>();
         new Thread(new Runnable() {

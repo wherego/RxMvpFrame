@@ -5,16 +5,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.presenter.login.RegisterPresenter;
 import com.yangzheandroid.rxmvp.utils.ToastUtils;
+import com.yangzheandroid.rxmvp.widget.dialog.PrettyProgressDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class RegisterActivity extends BaseActivity implements RegisterContract.View {
     @BindView(R.id.et_register_pnumber)
@@ -25,7 +25,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
     TextView mTvGetSmsCode;
     @BindView(R.id.btn_register)
     Button mBtnRegister;
-    private SweetAlertDialog mSweetAlertDialog;
+    private PrettyProgressDialog mPrettyProgressDialog;
     private Unbinder mUnbinder;
     private RegisterPresenter mPresenter;
 
@@ -54,7 +54,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
 
     @Override
     public void showLoading() {
-        mSweetAlertDialog = showLoadingDialog();
+        mPrettyProgressDialog = showLoadingDialog();
     }
 
     @Override

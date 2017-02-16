@@ -6,16 +6,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.presenter.login.LoginPresenter;
 import com.yangzheandroid.rxmvp.utils.ToastUtils;
+import com.yangzheandroid.rxmvp.widget.dialog.PrettyProgressDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
 
@@ -33,7 +33,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     TextView mTvWenti;
     private Unbinder mUnbinder;
     private LoginPresenter mLoginPresenter;
-    private SweetAlertDialog mSweetAlertDialog;
+    private PrettyProgressDialog mPrettyProgressDialog;
 
     @Override
     protected void initPresenter() {
@@ -76,12 +76,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void showLoading() {
-        mSweetAlertDialog = showLoadingDialog();
+        mPrettyProgressDialog = showLoadingDialog();
     }
 
     @Override
     public void hideLoading() {
-
         stopLoadingDialog();
     }
 

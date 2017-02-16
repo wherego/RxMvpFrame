@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
 
 import butterknife.BindView;

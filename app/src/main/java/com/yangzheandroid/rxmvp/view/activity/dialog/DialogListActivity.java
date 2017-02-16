@@ -2,16 +2,16 @@ package com.yangzheandroid.rxmvp.view.activity.dialog;
 
 import android.os.Bundle;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
 import com.yangzheandroid.rxmvp.presenter.dialog.DialogListPresenter;
+import com.yangzheandroid.rxmvp.widget.dialog.PrettyProgressDialog;
 import com.yangzheandroid.rxmvp.widget.refreshload.PullRecyclerView;
 import com.yangzheandroid.rxmvp.widget.refreshload.PullRefreshLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class DialogListActivity extends BaseActivity implements DialogListConstract.View {
 
@@ -22,7 +22,7 @@ public class DialogListActivity extends BaseActivity implements DialogListConstr
     PullRefreshLayout mPrlLayout;
     private DialogListPresenter mPresenter;
     private Unbinder mUnbinder;
-    private SweetAlertDialog mSweetAlertDialog;
+    private PrettyProgressDialog mPrettyProgressDialog;
 
     @Override
     protected void initVarlible() {
@@ -51,7 +51,7 @@ public class DialogListActivity extends BaseActivity implements DialogListConstr
 
     @Override
     public void showLoading() {
-        mSweetAlertDialog = showLoadingDialog();
+        mPrettyProgressDialog = showLoadingDialog();
     }
 
     @Override

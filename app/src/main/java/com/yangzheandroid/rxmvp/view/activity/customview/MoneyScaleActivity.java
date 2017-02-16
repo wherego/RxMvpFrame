@@ -3,7 +3,7 @@ package com.yangzheandroid.rxmvp.view.activity.customview;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.yangzheandroid.retrofitutils.base.BaseActivity;
+import com.yangzheandroid.rxmvp.base.BaseActivity;
 import com.yangzheandroid.rxmvp.R;
 import com.yangzheandroid.rxmvp.widget.custom.PanelView;
 import com.yangzheandroid.rxmvp.widget.custom.ScaleMoney;
