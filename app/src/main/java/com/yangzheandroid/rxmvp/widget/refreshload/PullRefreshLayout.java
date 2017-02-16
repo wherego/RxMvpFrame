@@ -92,7 +92,7 @@ public class PullRefreshLayout extends RelativeLayout {
 		if (isFirstTimeCallOnLayout) {
 			isFirstTimeCallOnLayout = false;
 			mPullableView = getChildAt(2);
-			if (getChildCount() > 3)
+			if (getChildCount() > 3)//只能有一个组件
 				throw new IllegalArgumentException("PullToRefreshLayout should only has one direct child in xml !");
 			initView();
 		}
@@ -210,6 +210,7 @@ public class PullRefreshLayout extends RelativeLayout {
 		stage = to;
 		switch (stage) {
 		case INIT: // 下拉布局初始状态
+			refreshingBar.setVisibility(View.INVISIBLE);
 			refreshHintText.setText(R.string.pull_to_refresh);
 			refreshHintText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
 			refreshArrowImg.setVisibility(View.VISIBLE);
