@@ -21,7 +21,6 @@ import com.yangzheandroid.rxmvp.R;
 
 
 public class ProgressLoading extends View {
-
     private static final String TAG = ProgressLoading.class.getSimpleName();
     private final int barLength = 16;
     private final int barMaxLength = 270;
@@ -32,7 +31,7 @@ public class ProgressLoading extends View {
      * **********
      */
     //Sizes (with defaults in DP)
-    private int circleRadius = 28;
+    private int circleRadius = 28;//圆的半径
     private int barWidth = 4;
     private int rimWidth = 4;
     private boolean fillRadius = false;
@@ -72,17 +71,6 @@ public class ProgressLoading extends View {
     /**
      * The constructor for the ProgressLoading
      */
-    public ProgressLoading(Context context, AttributeSet attrs) {
-        super(context, attrs);
-
-        parseAttributes(context.obtainStyledAttributes(attrs, R.styleable.ProgressLoading));
-
-        setAnimationEnabled();
-    }
-
-    /**
-     * The constructor for the ProgressLoading
-     */
     public ProgressLoading(Context context) {
         super(context);
         setAnimationEnabled();
@@ -102,6 +90,17 @@ public class ProgressLoading extends View {
         }
 
         shouldAnimate = animationValue != 0;
+    }
+
+    /**
+     * The constructor for the ProgressLoading
+     */
+    public ProgressLoading(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+        parseAttributes(context.obtainStyledAttributes(attrs, R.styleable.ProgressLoading));
+
+        setAnimationEnabled();
     }
 
     //----------------------------------

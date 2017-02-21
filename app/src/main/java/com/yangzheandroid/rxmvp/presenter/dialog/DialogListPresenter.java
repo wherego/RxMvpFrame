@@ -1,5 +1,6 @@
 package com.yangzheandroid.rxmvp.presenter.dialog;
 
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -13,6 +14,8 @@ import com.yangzheandroid.retrofitutils.utils.LogUtil;
 import com.yangzheandroid.rxmvp.R;
 import com.yangzheandroid.rxmvp.model.OnRequestListenter;
 import com.yangzheandroid.rxmvp.model.dialog.DialogListIml;
+import com.yangzheandroid.rxmvp.utils.DialogUtil;
+import com.yangzheandroid.rxmvp.utils.ToastUtils;
 import com.yangzheandroid.rxmvp.view.activity.dialog.DialogListActivity;
 import com.yangzheandroid.rxmvp.view.activity.dialog.DialogListConstract;
 import com.yangzheandroid.rxmvp.widget.dialog.BottomDialog;
@@ -38,7 +41,7 @@ public class DialogListPresenter implements DialogListConstract.Presenter, PullR
     public DialogListPresenter(DialogListActivity view) {
         mView = view;
         mModel = new DialogListIml();
-        mHandler = new Handler(Looper.getMainLooper()){
+        mHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
@@ -89,7 +92,7 @@ public class DialogListPresenter implements DialogListConstract.Presenter, PullR
                 baseViewHolder.setText(R.id.txt_content, str);
             }
         });
-
+        //设置下拉刷新和上拉加载更多
         mView.getPullToRefresh().setOnRefreshLoadListener(this);
 
         BaseQuickAdapter adapter = (BaseQuickAdapter) mView.getRecycleView().getAdapter();
@@ -109,6 +112,53 @@ public class DialogListPresenter implements DialogListConstract.Presenter, PullR
                     case 2:
                         PrettyProgressDialog progressDialog = new PrettyProgressDialog(mView);
                         progressDialog.show();
+                        break;
+                    case 3:
+                        DialogUtil.showCustomSimpleDialog(mView, "强制更新", new DialogUtil.SingleDialogCallBack() {
+                            @Override
+                            public void callBackPositive(DialogInterface dialog) {
+                                ToastUtils.showToast("立即更新");
+                            }
+                        });
+                        break;
+                    case 4:
+                        DialogUtil.showCustomDialog(mView, "强制更新", new DialogUtil.DoubleDialogCallBack() {
+                            @Override
+                            public void callBackPositive(DialogInterface dialog) {
+                                ToastUtils.showToast("取消");
+                                dialog.dismiss();
+                            }
+
+                            @Override
+                            public void callBackNegative(DialogInterface dialog) {
+                                ToastUtils.showToast("立即更新");
+                                dialog.dismiss();
+                            }
+                        });
+                        break;
+                    case 5:
+                        DialogUtil.showSimpleDialog(mView, "V7对话框", "强制更新", true, new DialogUtil.SingleDialogCallBack() {
+                            @Override
+                            public void callBackPositive(DialogInterface dialog) {
+                                ToastUtils.showToast("立即更新");
+                                dialog.dismiss();
+                            }
+                        });
+                        break;
+                    case 6:
+                        DialogUtil.showDialog(mView, "V7对话框", "强制更新", true, new DialogUtil.DoubleDialogCallBack() {
+                            @Override
+                            public void callBackPositive(DialogInterface dialog) {
+                                ToastUtils.showToast("取消");
+                                dialog.dismiss();
+                            }
+
+                            @Override
+                            public void callBackNegative(DialogInterface dialog) {
+                                ToastUtils.showToast("立即更新");
+                                dialog.dismiss();
+                            }
+                        });
                         break;
                     default:
 

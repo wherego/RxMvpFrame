@@ -14,8 +14,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class DialogListActivity extends BaseActivity implements DialogListConstract.View {
-
-
     @BindView(R.id.dialog_list)
     PullRecyclerView mDialogList;
     @BindView(R.id.prl_layout)
