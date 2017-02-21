@@ -12,10 +12,16 @@ import com.yangzheandroid.rxmvp.widget.dialog.HintDialog;
  * Author：yangjilai
  * Time: 2017/2/21 14:34
  * <p>
- * 功能描述:
+ * 功能描述: dialog的工具类
  */
 public class DialogUtil {
-
+    /**
+     * 只有一个Button的自定义对话框
+     *
+     * @param context
+     * @param message
+     * @param dialogCallBack
+     */
     public static void showCustomSimpleDialog(Context context, String message, final SingleDialogCallBack dialogCallBack) {
         HintDialog dialog = new HintDialog(context);
         dialog.setTitle("强制更新");
@@ -33,6 +39,13 @@ public class DialogUtil {
         dialog.show();
     }
 
+    /**
+     * 具有两个Button的自定义对话框
+     *
+     * @param context
+     * @param message
+     * @param dialogCallBack
+     */
     public static void showCustomDialog(Context context, String message, final DoubleDialogCallBack dialogCallBack) {
         int color = context.getResources().getColor(R.color.black);
         HintDialog dialog2 = new HintDialog(context);
@@ -53,7 +66,15 @@ public class DialogUtil {
         dialog2.show();
     }
 
-
+    /**
+     * 具有两个Buton的对话框,弹出的是V7包下的对话框
+     *
+     * @param context
+     * @param title
+     * @param message
+     * @param isCancecle
+     * @param dialogCallBack
+     */
     public static void showDialog(Context context, String title, String message, boolean isCancecle, final DoubleDialogCallBack dialogCallBack) {
         AlertDialog show = new AlertDialog.Builder(context)
                 .setTitle(title)
@@ -79,7 +100,15 @@ public class DialogUtil {
 
     }
 
-
+    /**
+     * 具有一个Buton的对话框,弹出的是V7包下的对话框
+     *
+     * @param context
+     * @param title
+     * @param message
+     * @param isCancecle
+     * @param dialogCallBack
+     */
     public static void showSimpleDialog(Context context, String title, String message, boolean isCancecle, final SingleDialogCallBack dialogCallBack) {
         new AlertDialog.Builder(context)
                 .setTitle(title)
@@ -96,7 +125,6 @@ public class DialogUtil {
                 .show();
 
     }
-
 
     public interface DoubleDialogCallBack {
         void callBackPositive(DialogInterface dialog);
